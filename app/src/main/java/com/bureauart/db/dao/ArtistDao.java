@@ -9,14 +9,16 @@ import com.bureauart.model.Artist;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 @Dao
 public interface ArtistDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAllArtists(List<Artist> artists);
 
     @Query("SELECT * FROM Artist")
-    List<Artist> getAllArtists();
+    Single<List<Artist>> getAllArtists();
 
     @Query("SELECT * FROM Artist where name = :name")
-    Artist getArtistByName(String name);
+    Single<Artist> getArtistByName(String name);
 }

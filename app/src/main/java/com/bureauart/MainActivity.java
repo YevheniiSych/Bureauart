@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void fillDB(){
         List<Picture> pictures = new ArrayList<>();
         pictures.add(new Picture(
-                "https://user-images.githubusercontent.com/66691210/102530792-1e2fd000-40aa-11eb-9454-4e2cd46f38bb.png",
+                "https://user-images.githubusercontent.com/66691210/102537429-99e24a80-40b3-11eb-8bf7-ac38175aad2f.png",
                 "Натюрморт",
                 "Маркова Анастасия",
                 50,
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 1500
         ));
         pictures.add(new Picture(
-                "https://user-images.githubusercontent.com/66691210/102530795-1e2fd000-40aa-11eb-8b6b-5c815bfb6329.png",
+                "https://user-images.githubusercontent.com/66691210/102537427-9949b400-40b3-11eb-9808-7df5d80a4771.png",
                 "Натроение",
                 "Охрименко Владислава",
                 50,

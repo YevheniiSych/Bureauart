@@ -10,14 +10,16 @@ import com.bureauart.model.Picture;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 @Dao
 public interface PictureDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAllPictures(List<Picture> pictures);
 
     @Query("SELECT * FROM Picture")
-    List<Picture> getAllPictures();
+    Single<List<Picture>> getAllPictures();
 
     @Query("SELECT * FROM Picture where artistName = :artistId")
-    List<Picture> getPictureByArtistId(int artistId);
+    Single<List<Picture>> getPictureByArtistId(int artistId);
 }
