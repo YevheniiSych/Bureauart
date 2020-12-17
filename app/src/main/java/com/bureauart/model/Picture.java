@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = Artist.class, parentColumns = "name", childColumns = "artistName"))
+@Entity
 public class Picture {
     @PrimaryKey(autoGenerate = true)
     private int pictureId;
