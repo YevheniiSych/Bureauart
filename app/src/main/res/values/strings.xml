@@ -3,4 +3,10 @@
     <string name="title_artists">Художники</string>
     <string name="title_gallery">Галерея</string>
     <string name="title_contacts">Контакты</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy">Купить</string>
+    <string name="back">Назад</string>
+    <string name="picture_size_placeholder">Размер: %dx%d</string>
+    <string name="picture_price_placeholder">Цена: %d грн</string>
 </resources>

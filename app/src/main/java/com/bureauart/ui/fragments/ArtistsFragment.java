@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bureauart.App;
 import com.bureauart.R;
 import com.bureauart.ui.adapter.ArtistAdapter;
-import com.bureauart.ui.adapter.PictureAdapter;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -41,6 +39,6 @@ public class ArtistsFragment extends Fragment {
         App.getInstance().getDatabase().artistDao().getAllArtists()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(artists -> artistsList.setAdapter(new ArtistAdapter(artists)));
+                .subscribe(artists -> artistsList.setAdapter(new ArtistAdapter(artists, getActivity())));
     }
 }

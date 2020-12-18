@@ -22,4 +22,7 @@ public interface PictureDao {
 
     @Query("SELECT * FROM Picture where artistName = :artistId")
     Single<List<Picture>> getPictureByArtistId(int artistId);
+
+    @Query("SELECT * FROM Picture where pictureId = :pictureId")
+    Single<Picture> getPictureById(int pictureId);
 }

@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bureauart.R;
@@ -16,9 +17,11 @@ import java.util.List;
 public class PictureAdapter extends RecyclerView.Adapter<PictureViewHolder> {
 
     private List<Picture> pictures;
+    private FragmentActivity activity;
 
-    public PictureAdapter(List<Picture> pictures) {
+    public PictureAdapter(List<Picture> pictures, FragmentActivity activity) {
         this.pictures = pictures;
+        this.activity = activity;
     }
 
     @NonNull
@@ -26,7 +29,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureViewHolder> {
     public PictureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.picture_item, parent, false);
-        return new PictureViewHolder(view);
+        return new PictureViewHolder(view, activity);
     }
 
     @Override

@@ -22,6 +22,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
+    public NavController navController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_artists, R.id.navigation_gallery, R.id.navigation_contacts)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        this.navController = navController;
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
     }

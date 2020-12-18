@@ -5,7 +5,8 @@
     android:gravity="center_horizontal"
     android:layout_margin="10dp"
     android:background="@drawable/stroke_rectangle"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:id="@+id/pictureItem">
 
     <ImageView
         android:id="@+id/pictureItemImg"

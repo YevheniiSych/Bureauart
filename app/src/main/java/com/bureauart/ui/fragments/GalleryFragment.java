@@ -40,7 +40,7 @@ public class GalleryFragment extends Fragment {
         App.getInstance().getDatabase().pictureDao().getAllPictures()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(pictures -> galleryList.setAdapter(new PictureAdapter(pictures)));
+                .subscribe(pictures -> galleryList.setAdapter(new PictureAdapter(pictures, getActivity())));
     }
 
 }
