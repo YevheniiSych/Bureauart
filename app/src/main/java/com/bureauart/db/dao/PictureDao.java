@@ -1,7 +1,6 @@
 package com.bureauart.db.dao;
 
 import androidx.room.Dao;
-import androidx.room.Database;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -20,8 +19,8 @@ public interface PictureDao {
     @Query("SELECT * FROM Picture")
     Single<List<Picture>> getAllPictures();
 
-    @Query("SELECT * FROM Picture where artistName = :artistId")
-    Single<List<Picture>> getPictureByArtistId(int artistId);
+    @Query("SELECT * FROM Picture where artistName = :artistName")
+    Single<List<Picture>> getPictureByArtistName(String artistName);
 
     @Query("SELECT * FROM Picture where pictureId = :pictureId")
     Single<Picture> getPictureById(int pictureId);

@@ -47,6 +47,13 @@ public class ArtistDetailFragment extends Fragment {
         name = view.findViewById(R.id.artistDetailName);
         info = view.findViewById(R.id.artistDetailInfo);
         showWorksBtn = view.findViewById(R.id.showArtistWorks);
+        showWorksBtn.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                Bundle bundle = new Bundle();
+                bundle.putString(ARTIST_NAME, name.getText().toString());
+                ((MainActivity) getActivity()).navController.navigate(R.id.artistPicturesFragment, bundle);
+            }
+        });
 
         init();
     }
@@ -61,7 +68,7 @@ public class ArtistDetailFragment extends Fragment {
 
     @SuppressLint("CheckResult")
     private void init() {
-        if(getArguments() != null){
+        if (getArguments() != null) {
             String artistName = getArguments().getString(ARTIST_NAME);
             App.getInstance().getDatabase().artistDao().getArtistByName(artistName)
                     .subscribeOn(Schedulers.io())
