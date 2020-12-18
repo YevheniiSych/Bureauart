@@ -3,6 +3,7 @@ package com.bureauart.ui.fragments;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -37,10 +38,19 @@ public class ArtistPicturesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
         picturesList = view.findViewById(R.id.artistPicturesList);
         picturesList.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         init();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home && getActivity() != null) {
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @SuppressLint("CheckResult")
