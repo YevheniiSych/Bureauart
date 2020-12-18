@@ -16,6 +16,7 @@ import com.bureauart.R;
 import com.bureauart.model.Picture;
 import com.squareup.picasso.Picasso;
 
+import static com.bureauart.ui.fragments.ArtistDetailFragment.ARTIST_NAME;
 import static com.bureauart.ui.fragments.PictureFragment.PICTURE_ID;
 
 public class PictureViewHolder extends RecyclerView.ViewHolder {
@@ -49,6 +50,12 @@ public class PictureViewHolder extends RecyclerView.ViewHolder {
             Bundle bundle = new Bundle();
             bundle.putInt(PICTURE_ID, (int) v.getTag());
             ((MainActivity) activity).navController.navigate(R.id.pictureFragment, bundle);
+        });
+        artistName.setTag(picture.getArtistName());
+        artistName.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString(ARTIST_NAME, v.getTag().toString());
+            ((MainActivity) activity).navController.navigate(R.id.artistDetailFragment, bundle);
         });
     }
 }

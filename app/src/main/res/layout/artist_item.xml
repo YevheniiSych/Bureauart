@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="40dp"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/artistItem">
 
     <ImageView
         android:id="@+id/artistItemPhoto"

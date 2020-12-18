@@ -25,6 +25,8 @@ import java.util.Objects;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.bureauart.ui.fragments.ArtistDetailFragment.ARTIST_NAME;
+
 public class PictureFragment extends Fragment {
 
     public static final String PICTURE_ID = "PICTURE_ID";
@@ -56,6 +58,13 @@ public class PictureFragment extends Fragment {
         buyBtn = view.findViewById(R.id.buttonBuy);
         backBtn = view.findViewById(R.id.buttonBack);
         backBtn.setOnClickListener(v -> getActivity().onBackPressed());
+        artistNameTxt.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                Bundle bundle = new Bundle();
+                bundle.putString(ARTIST_NAME, artistNameTxt.getText().toString());
+                ((MainActivity) getActivity()).navController.navigate(R.id.artistDetailFragment, bundle);
+            }
+        });
 
         init();
     }

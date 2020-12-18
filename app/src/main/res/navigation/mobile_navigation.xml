@@ -27,4 +27,9 @@
         android:name="com.bureauart.ui.fragments.PictureFragment"
         android:label="fragment_picture"
         tools:layout="@layout/fragment_picture" />
+    <fragment
+        android:id="@+id/artistDetailFragment"
+        android:name="com.bureauart.ui.fragments.ArtistDetailFragment"
+        android:label="fragment_artist_detail"
+        tools:layout="@layout/fragment_artist_detail" />
 </navigation>
